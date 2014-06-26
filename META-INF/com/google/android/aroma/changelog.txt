@@ -1,5 +1,9 @@
-<@center><b>Recovery Switcher 1.0.1</b></@>
+<@center><b>Recovery Switcher 1.1</b></@>
 <@center><b>Adapted from Recovery Switcher by Flashalot @ XDA</b></@>
+<@center><b>26.06.2014</b></@>
+<@center><*>Update PhilZ Touch to 6.47.7</*></@>
+<@center><*>Update TWRP to 2.7.1.0</*></@>
+<@center><*>Remove "normal" PhilZ Touch Blackhawk</*></@>
 
 <@center><b>08. April 2014</b></@>
 <@center><*>Update PhilZ Touch to 6.26.1</*></@>
