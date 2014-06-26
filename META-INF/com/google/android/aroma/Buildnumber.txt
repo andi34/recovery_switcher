@@ -1,0 +1,9 @@
+﻿<@center><b>Recoveries and Features in here</b></@>
+<@center><*>TWRP 2.7.1.0</*></@>
+<@center><*>ClockworkMod 6.0.4.9</*></@>
+<@center><*>PhilZ Touch Recovery 6.47.7</*></@>
+<@center><*>EFS-Backup to your internal Storage</*></@>
+
+<@center><b>Stock Recoveries</b></@>
+<@center><b>(Taken from Stockrom)</b></@>
+<@center><*>GT-I8190: DBT-I8190XXAMG4</*></@>

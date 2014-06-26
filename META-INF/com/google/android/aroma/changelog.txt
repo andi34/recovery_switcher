@@ -1,0 +1,5 @@
+<@center><b>Recovery Switcher 1.0.0</b></@>
+<@center><b>Adapted from Recovery Switcher by Flashalot @ XDA</b></@>
+
+<@center><b>26.06.2014</b></@>
+<@center><*>Initial</*></@>
