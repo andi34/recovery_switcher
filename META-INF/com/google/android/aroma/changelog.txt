@@ -1,0 +1,17 @@
+<@center><b>Recovery Switcher 1.0.1</b></@>
+<@center><b>Adapted from Recovery Switcher by Flashalot @ XDA</b></@>
+
+<@center><b>08. April 2014</b></@>
+<@center><*>Update PhilZ Touch to 6.26.1</*></@>
+<@center><*>Update TWRP to 2.7.0.2</*></@>
+<@center><*>Added Stock Recoveries</*></@>
+<@center><*>Option to change PX110 to PX113 device (only in PX110)</*></@>
+
+<@center><b>04. April 2014</b></@>
+<@center><*>Improved UI, using ICS Theme</*></@>
+<@center><*>Added option to backup EFS</*></@>
+<@center><*>Colors now displayed correctly</*></@>
+
+<@center><b>Recovery Switcher 0.9.0</b></@>
+<@center><b>03. April 2014</b></@>
+<@center><*>Initial Testing</*></@>
