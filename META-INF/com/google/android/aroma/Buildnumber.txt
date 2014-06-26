@@ -1,0 +1,17 @@
+﻿<@center><b>Recoveries and Features in here</b></@>
+<@center><*>TWRP 2.7.0.2</*></@>
+<@center><*>ClockworkMod 6.0.4.7 - Swipe-Edition</*></@>
+<@center><*>PhilZ Touch Recovery 6.26.1</*></@>
+<@center><*>PhilZ Touch Recovery 6.26.1 - Blackhawk</*></@>
+<@center><*>PhilZ Touch Recovery 6.26.1 - Blackhawk-f2fs</*></@>
+<@center><*>EFS-Backup to your internal Storage</*></@>
+<@center><*>Make PX110 to PX113 in buildprop (only PX110 package)</*></@>
+
+<@center><b>Stock Recoveries</b></@>
+<@center><b>(Not all included, only device specific)</b></@>
+<@center><*>P3100: AUT-P3100XWDNA1</*></@>
+<@center><*>P3110: BTU-P3110XXDMH1</*></@>
+<@center><*>P3113: XAR-P3113UEUCMK3</*></@>
+<@center><*>P5100: PHE-P5100XXDNA1</*></@>
+<@center><*>P5110: AUT-P5110XXDNB1</*></@>
+<@center><*>P5113: XAR-P5113UEUCMK3</*></@>

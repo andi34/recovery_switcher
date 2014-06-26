@@ -1,0 +1,163 @@
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("===============================");
+ui_print("| Recovery Switcher");
+ui_print("| by Android-Andi"); 
+ui_print("| "); 
+ui_print("| For Samsung Galaxy Tab 2 only");
+ui_print("| GT-P5110 & GT-P5113");
+ui_print("===============================");
+ui_print("");
+ui_print("");
+ui_print("Please BE PATIENT!");
+########################Mounting System########################
+set_progress(0.1);
+ui_print("Begin...");
+ui_print("");
+ui_print("");
+##########################Installation##########################
+ui_print("@Processing...");
+ui_print("");
+ui_print("");
+set_progress(0.10);
+#########################Tools##########################
+package_extract_file("utils/busybox", "/tmp/busybox");
+set_perm(0, 0, 0777, "/tmp/busybox");
+#########################Recoverys##########################
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "1"
+then
+ui_print("@Installing TWRP");
+ui_print("Installing TWRP...");
+package_extract_file("recovery/twrp/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p6");
+delete("/tmp/recovery.img");
+set_progress(0.6);
+ui_print("@Recovery Installed");
+endif;
+
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "2"
+then
+ui_print("@Installing CWM Swipe-Edition");
+ui_print("Installing CWM Swipe-Edition...");
+package_extract_file("recovery/cwm_swipe/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p6");
+delete("/tmp/recovery.img");
+set_progress(0.6);
+ui_print("@Recovery Installed");
+endif;
+
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "3"
+then
+ui_print("@Installing PhilZ Touch Recovery");
+ui_print("Installing PhilZ Touch Recovery...");
+package_extract_file("recovery/philz/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p6");
+delete("/tmp/recovery.img");
+set_progress(0.6);
+ui_print("@Recovery Installed");
+endif;
+
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "4"
+then
+ui_print("@Installing PhilZ Touch Recovery - Blackhawk");
+ui_print("Installing PhilZ Touch Recovery - Blackhawk...");
+package_extract_file("recovery/philz_bh/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p6");
+delete("/tmp/recovery.img");
+set_progress(0.6);
+ui_print("@Recovery Installed");
+endif;
+
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "5"
+then
+ui_print("@Installing PhilZ Touch Recovery - Blackhawk-f2fs");
+ui_print("Installing PhilZ Touch Recovery - Blackhawk-f2fs...");
+package_extract_file("recovery/philz_bh_f2fs/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p6");
+delete("/tmp/recovery.img");
+set_progress(0.6);
+ui_print("@Recovery Installed");
+endif;
+
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "6"
+then
+ui_print("@Installing Stock Recovery");
+ui_print("Installing Stock Recovery...");
+package_extract_file("recovery/stock_p5110/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p6");
+delete("/tmp/recovery.img");
+set_progress(0.6);
+ui_print("@Recovery Installed");
+endif;
+
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "7"
+then
+ui_print("@Installing Stock Recovery");
+ui_print("Installing Stock Recovery...");
+package_extract_file("recovery/stock_p5113/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p6");
+delete("/tmp/recovery.img");
+set_progress(0.6);
+ui_print("@Recovery Installed");
+endif;
+
+#########################Tools##########################
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "8"
+then
+ui_print("@Backing up EFS");
+# Mount
+ui_print("Setting up required tools...");
+package_extract_file("utils/mount", "/tmp/mount");
+set_perm(0, 0, 0755, "/tmp/mount");
+ui_print("Mounting Data");
+run_program("/tmp/mount", "/sdcard");
+run_program("/sbin/busybox", "dd", "if=/dev/block/mmcblk0p1", "of=/sdcard/efs.img", "bs=4096");
+set_progress(0.6);
+ui_print("@EFS-Backup finished");
+ui_print("find on your internal Storage at /sdcard/efs.img");
+# Unmount
+ui_print("Unmounting Partition");
+unmount("/data");
+endif;
+
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "9"
+then
+ui_print("@Patching P5110 to P5113");
+# Mount
+ui_print("Setting up required tools...");
+ui_print("Mounting system.");
+run_program("/tmp/mount", "/system");
+ui_print("Writing to build.prop");
+package_extract_file("tools/p5110_to_p5113.sh", "/tmp/command.sh");
+set_perm(0, 0, 0777, "/tmp/command.sh");
+run_program("/tmp/command.sh", "");
+# Unmount
+ui_print("Unmounting Partition");
+unmount("/system");
+delete("/tmp/command.sh");
+endif;
+
+#########################Clean-Up Tools##########################
+delete("/tmp/busybox");
+#########################End##########################
+set_progress(1.0);
+ui_print("Done!!!!");

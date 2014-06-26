@@ -1,0 +1,141 @@
+##
+#
+#           AROMA all in one Tweaks
+#       (c) 2011-2012 by Ahmad Amarullah
+#           amarullz - xda-developers
+#           http://www.amarullz.com/
+#
+#       Binary Version  : 2.70B
+#       Binary Codename : Flamboyan
+#
+##
+####################################################
+ini_set("rom_name",             "Recovery Switcher");
+ini_set("rom_version",          "Build 1");
+ini_set("rom_author",           "Android-Andi");
+ini_set("rom_device",           "GT-P5110 & GT-P5113");
+ini_set("rom_date",             "08.04.2014");
+theme("ics");
+fontresload( "0", "ttf/Roboto-Regular.ttf", "10" );
+fontresload( "1", "ttf/Roboto-Regular.ttf", "12" ); 
+ini_set("transition","stack");
+####################################################
+
+# Show Logo while starting
+splash(
+    3000,
+    "tab2_aproved"
+);
+
+viewbox(
+  "Welcome",
+  "\n\n\n\n\n"+
+  "You're about to flash:\n"+
+  ini_get("rom_name") + " for " + ini_get("rom_device") +  "\n\n\n"+
+  "  Version:  <#FF0000>" + ini_get("rom_version") + "</#>\n"+
+  "  Updated:  <#FF0000>" + ini_get("rom_date") + "</#>\n\n\n"+
+  "  This is your device (device discovered):<b><#selectbg_g> "+sysprop("ro.product.model")+"</#></b>\n\n\n"+  
+  "Press <b>Next</b> to continue...",
+  "icons/welcome"
+);
+
+pleasewait("Reading configurations...");
+
+alert (
+ "If you like my work",
+ "Please click the Thanks-Button in my threads or any one of my posts. \n"+
+ "Thanks!",
+ "icons/alert"
+ );
+
+textbox(
+  "Changelog",
+  "Recovery Switcher changelog:",
+  "icons/info",
+  readfile_aroma("changelog.txt")
+);
+
+agreebox(
+  "Terms Of Use",
+  "Recovery Switcher Terms Of Use:",
+  "icons/agreement",
+  readfile_aroma("agreement.txt"),
+  "I agree with these terms of use",
+  "Please check the agreement to continue..."
+);
+
+textbox(
+  "Build Numbers",
+  "Recovery Build Numbers:",
+  "icons/info",
+  readfile_aroma("Buildnumber.txt")
+);
+
+menubox(
+  "Install a custom Recovery or run a tool",
+  "Please select:",
+  "icons/install",
+  "recovery.prop",
+  
+  "Install TWRP Recovery","","icons/install",
+  "Install CWM Recovery Swipe-Edition","","icons/install",
+  "Install PhilZ Touch Recovery","","icons/install",
+  "Install PhilZ Touch Recovery - Blackhawk","","icons/install",
+  "Install PhilZ Touch Recovery - Blackhawk-f2fs","","icons/install",
+  "Install Stock Recovery (P5110)","","icons/install",
+  "Install Stock Recovery (P5113)","","icons/install",
+##
+# Tools
+##
+  "EFS-Backup","","icons/security",
+  "Make P5110 to P5113 in build.prop","","icons/install",
+  "Skip","I don't want try this feature","icons/skip"
+);
+
+pleasewait("Configure...");
+
+viewbox(
+  "Ready",
+  "The wizard is ready to begin.\n\n"+
+  "Press <b>Next</b> to begin the action.\n\n"+
+  "If you want to change your settings, press <b>Back</b> or Press Menu Key -> Quit Installation to exit the wizard.",
+  "icons/confirm"
+);
+
+install(
+  "Starting...",
+  "Running " + ini_get("rom_name") + " " + ini_get("rom_version") + 
+  "...\nPlease wait until it's finished...",
+  "icons/install"
+);
+
+
+#Set Next Text fo Finish
+ini_set("text_next", "Finish");
+
+viewbox(
+  "Installation Completed",
+  "<#FF0000>Congratulations...</#>\n\n"+
+  ini_get("rom_name") + " " + ini_get("rom_version") + " , job successfully.\n\n"+
+  "Tap Finish, and Reboot your Device.\n\nThanks.",
+  "icons/finish"
+);
+
+alert (
+ "Information",
+ "If you installed a recovery please reboot for the recovery to take affect. \n"+
+ "Thanks!",
+ "icons/alert"
+ );
+
+if
+  confirm(
+      "Reboot",
+      "Reboot Now?",
+      "icons/info",
+      "Yes",
+      "No"
+  )=="yes"
+then
+  reboot("onfinish");
+endif;
