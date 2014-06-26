@@ -14,7 +14,7 @@ ini_set("rom_name",             "Recovery Switcher");
 ini_set("rom_version",          "Build 1");
 ini_set("rom_author",           "Android-Andi");
 ini_set("rom_device",           "GT-P5110 & GT-P5113");
-ini_set("rom_date",             "08.04.2014");
+ini_set("rom_date",             "26.06.2014");
 theme("ics");
 fontresload( "0", "ttf/Roboto-Regular.ttf", "10" );
 fontresload( "1", "ttf/Roboto-Regular.ttf", "12" ); 
@@ -80,7 +80,6 @@ menubox(
   "Install TWRP Recovery","","icons/install",
   "Install CWM Recovery Swipe-Edition","","icons/install",
   "Install PhilZ Touch Recovery","","icons/install",
-  "Install PhilZ Touch Recovery - Blackhawk","","icons/install",
   "Install PhilZ Touch Recovery - Blackhawk-f2fs","","icons/install",
   "Install Stock Recovery (P5110)","","icons/install",
   "Install Stock Recovery (P5113)","","icons/install",

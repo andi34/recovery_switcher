@@ -66,19 +66,6 @@ endif;
 
 set_progress(0.54);
 if
-file_getprop("/tmp/aroma-data/recovery.prop","selected") == "4"
-then
-ui_print("@Installing PhilZ Touch Recovery - Blackhawk");
-ui_print("Installing PhilZ Touch Recovery - Blackhawk...");
-package_extract_file("recovery/philz_bh/recovery.img", "/tmp/recovery.img");
-run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p6");
-delete("/tmp/recovery.img");
-set_progress(0.6);
-ui_print("@Recovery Installed");
-endif;
-
-set_progress(0.54);
-if
 file_getprop("/tmp/aroma-data/recovery.prop","selected") == "5"
 then
 ui_print("@Installing PhilZ Touch Recovery - Blackhawk-f2fs");
