@@ -1,9 +1,8 @@
 ﻿<@center><b>Recoveries and Features in here</b></@>
-<@center><*>TWRP 2.7.0.2</*></@>
-<@center><*>ClockworkMod 6.0.4.7 - Swipe-Edition</*></@>
-<@center><*>PhilZ Touch Recovery 6.26.1</*></@>
-<@center><*>PhilZ Touch Recovery 6.26.1 - Blackhawk</*></@>
-<@center><*>PhilZ Touch Recovery 6.26.1 - Blackhawk-f2fs</*></@>
+<@center><*>TWRP 2.7.1.0</*></@>
+<@center><*>ClockworkMod 6.0.4.9 - Swipe-Edition</*></@>
+<@center><*>PhilZ Touch Recovery 6.47.7</*></@>
+<@center><*>PhilZ Touch Recovery 6.47.7 - Blackhawk-f2fs</*></@>
 <@center><*>EFS-Backup to your internal Storage</*></@>
 <@center><*>Make PX110 to PX113 in buildprop (only PX110 package)</*></@>
 
